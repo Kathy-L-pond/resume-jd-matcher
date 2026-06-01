@@ -1,54 +1,23 @@
-# ResumeJdMatcher Crew
+# AI 简历优化 & JD匹配 Agent
 
-Welcome to the ResumeJdMatcher Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+一个基于 **CrewAI** 的多Agent系统 + Streamlit 网页Demo。
 
-## Installation
+## 功能
+- 上传简历 PDF
+- 粘贴职位描述 (JD)
+- 自动完成：JD解析 → 简历分析 → 匹配度评估 → 简历优化 → Cover Letter 生成
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 技术栈
+- CrewAI（多Agent框架）
+- Groq（免费 LLM）
+- Streamlit（网页界面）
+- PyPDF（PDF解析）
 
-First, if you haven't already, install uv:
-
+## 如何本地运行
 ```bash
-pip install uv
-```
+uv run streamlit run app.py
 
-Next, navigate to your project directory and install the dependencies:
+##项目目标
+- AI Agent可展示实战项目
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/resume_jd_matcher/config/agents.yaml` to define your agents
-- Modify `src/resume_jd_matcher/config/tasks.yaml` to define your tasks
-- Modify `src/resume_jd_matcher/crew.py` to add your own logic, tools and specific args
-- Modify `src/resume_jd_matcher/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the resume-jd-matcher Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The resume-jd-matcher Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the ResumeJdMatcher Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+made by Kathy-L-pond
