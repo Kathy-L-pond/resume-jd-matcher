@@ -17,7 +17,7 @@
 ```bash
 uv run streamlit run app.py
 
-##项目目标
+## 项目目标
 - AI Agent可展示实战项目
 
 made by Kathy-L-pond
