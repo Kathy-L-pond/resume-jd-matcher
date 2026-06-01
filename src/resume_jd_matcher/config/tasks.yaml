@@ -1,0 +1,38 @@
+# AI简历优化 & JD匹配 Agent 的工作流程
+
+parse_jd_task:
+  description: 用户提供的职位描述是：{user_jd}
+  expected_output: 从JD中提取关键技能要求、经验要求、学历要求和公司期望，用清晰的列表格式输出
+  agent: jd_parser
+
+analyze_resume_task:
+  description: 用户提供的简历内容是：{user_resume}
+  expected_output: 提取用户的教育背景、工作经验、技能、成就和关键信息，用结构化列表输出
+  agent: resume_analyzer
+
+match_task:
+  description: 对比JD要求和用户简历，给出详细匹配分析
+  expected_output: 给出匹配度百分比（例如82%），并列出强项、弱项和具体改进建议
+  agent: matcher
+  context:
+    - parse_jd_task
+    - analyze_resume_task
+
+optimize_resume_task:
+  description: 根据JD要求和匹配分析，优化用户的简历
+  expected_output: 输出优化后的完整简历（使用Markdown格式），并说明做了哪些关键修改
+  agent: resume_optimizer
+  context:
+    - parse_jd_task
+    - analyze_resume_task
+    - match_task
+
+cover_letter_task:
+  description: 根据JD、优化后的简历和匹配分析，撰写一封有针对性的求职信
+  expected_output: 输出完整、专业的Cover Letter（中文或英文，根据JD语言决定），长度控制在300-400字
+  agent: cover_letter_writer
+  context:
+    - parse_jd_task
+    - analyze_resume_task
+    - match_task
+    - optimize_resume_task

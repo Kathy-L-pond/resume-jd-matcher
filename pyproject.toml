@@ -1,0 +1,27 @@
+[project]
+name = "resume_jd_matcher"
+version = "0.1.0"
+description = "resume-jd-matcher using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.14.5a2",
+    "litellm>=1.86.2",
+    "pypdf>=6.12.2",
+    "streamlit>=1.58.0",
+]
+
+[project.scripts]
+resume_jd_matcher = "resume_jd_matcher.main:run"
+run_crew = "resume_jd_matcher.main:run"
+train = "resume_jd_matcher.main:train"
+replay = "resume_jd_matcher.main:replay"
+test = "resume_jd_matcher.main:test"
+run_with_trigger = "resume_jd_matcher.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
